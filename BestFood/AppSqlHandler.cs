@@ -10,21 +10,6 @@ namespace BestFood
         // Method to connect to the database
         private static SqlConnection Connect()
         {
-            /*
-            try
-            {
-                using (SqlConnection connection1 = new SqlConnection(connectionString))
-                {
-                    connection1.Open();
-                    Console.WriteLine("Successfully connected to SQL Server");
-                }
-            }
-            catch (SqlException e)
-            {
-                Console.WriteLine("Error connecting to SQL Server: " + e.Message);
-            }
-            */
-
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -38,6 +23,24 @@ namespace BestFood
                 throw;
             }
             return connection;
+        }
+
+        private static void TestConnect()
+        {
+            // not used in the current code -- for sanity check
+            try
+            {
+                using (SqlConnection connection1 = new SqlConnection(connectionString))
+                {
+                    connection1.Open();
+                    Console.WriteLine("Successfully connected to SQL Server");
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error connecting to SQL Server: " + e.Message);
+            }
+
         }
 
         // Method to execute the current query and return the results in a DataTable
@@ -69,5 +72,31 @@ namespace BestFood
             }
             return dataTable;
         }
+
+        public static bool InsertRow(string query)
+        {
+            if (string.IsNullOrEmpty(query))
+            {
+                throw new InvalidOperationException("Query is not set.");
+            }
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.ExecuteNonQuery();  // Execute the command
+                        return true;  // Return true if the command was successful
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error executing query: " + e.Message);
+                return false;  // Return false if an exception occurred
+            }
+        }
+
     }
 }
