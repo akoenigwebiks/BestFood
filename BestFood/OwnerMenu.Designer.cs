@@ -34,9 +34,6 @@
             categoryDTOBindingSource1 = new BindingSource(components);
             categoriesBindingSource = new BindingSource(components);
             datagridView_categories = new DataGridView();
-            getFoodsForCategory = new DataGridViewButtonColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             categoryDTOBindingSource2 = new BindingSource(components);
             label1 = new Label();
             dishDTOBindingSource = new BindingSource(components);
@@ -49,6 +46,8 @@
             textBox_addCategory = new TextBox();
             button_categoryAdd = new Button();
             panel_addFood = new Panel();
+            label_addFood_price = new Label();
+            textBox_addFood_price = new TextBox();
             label_addFood_Description = new Label();
             textBox_addFood_description = new TextBox();
             label_addFood_Name = new Label();
@@ -56,8 +55,13 @@
             comboBox_addFood_categories = new ComboBox();
             textBox_addFood_name = new TextBox();
             button_addFood = new Button();
-            label_addFood_price = new Label();
-            textBox_addFood_price = new TextBox();
+            label_total_orders = new Label();
+            textBox_total_orders = new TextBox();
+            label_total_income = new Label();
+            textBox_total_income = new TextBox();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            getFoodsForCategory = new DataGridViewButtonColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)categoryDTOBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)categoryDTOBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)categoriesBindingSource).BeginInit();
@@ -72,7 +76,7 @@
             // categories
             // 
             categories.AutoSize = true;
-            categories.Location = new Point(1079, 9);
+            categories.Location = new Point(1103, 27);
             categories.Name = "categories";
             categories.Size = new Size(89, 28);
             categories.TabIndex = 0;
@@ -82,39 +86,14 @@
             // 
             datagridView_categories.AutoGenerateColumns = false;
             datagridView_categories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            datagridView_categories.Columns.AddRange(new DataGridViewColumn[] { getFoodsForCategory, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
+            datagridView_categories.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, getFoodsForCategory, dataGridViewTextBoxColumn4 });
             datagridView_categories.DataSource = categoryDTOBindingSource2;
-            datagridView_categories.Location = new Point(764, 58);
+            datagridView_categories.Location = new Point(738, 58);
             datagridView_categories.Name = "datagridView_categories";
             datagridView_categories.RowHeadersWidth = 51;
-            datagridView_categories.Size = new Size(428, 188);
+            datagridView_categories.Size = new Size(454, 188);
             datagridView_categories.TabIndex = 1;
             datagridView_categories.CellClick += button_viewCategoryFoods_Click;
-            // 
-            // getFoodsForCategory
-            // 
-            getFoodsForCategory.HeaderText = "צפייה";
-            getFoodsForCategory.MinimumWidth = 6;
-            getFoodsForCategory.Name = "getFoodsForCategory";
-            getFoodsForCategory.Text = "צפה";
-            getFoodsForCategory.UseColumnTextForButtonValue = true;
-            getFoodsForCategory.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.DataPropertyName = "CategoryId";
-            dataGridViewTextBoxColumn3.HeaderText = "מזהה";
-            dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            dataGridViewTextBoxColumn4.HeaderText = "קטגוריה";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.Width = 125;
             // 
             // categoryDTOBindingSource2
             // 
@@ -123,7 +102,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(1092, 268);
+            label1.Location = new Point(1113, 289);
             label1.Name = "label1";
             label1.Size = new Size(79, 28);
             label1.TabIndex = 2;
@@ -221,6 +200,22 @@
             panel_addFood.Size = new Size(343, 407);
             panel_addFood.TabIndex = 5;
             // 
+            // label_addFood_price
+            // 
+            label_addFood_price.AutoSize = true;
+            label_addFood_price.Location = new Point(253, 171);
+            label_addFood_price.Name = "label_addFood_price";
+            label_addFood_price.Size = new Size(54, 28);
+            label_addFood_price.TabIndex = 11;
+            label_addFood_price.Text = "מחיר";
+            // 
+            // textBox_addFood_price
+            // 
+            textBox_addFood_price.Location = new Point(50, 202);
+            textBox_addFood_price.Name = "textBox_addFood_price";
+            textBox_addFood_price.Size = new Size(257, 34);
+            textBox_addFood_price.TabIndex = 10;
+            // 
             // label_addFood_Description
             // 
             label_addFood_Description.AutoSize = true;
@@ -230,10 +225,10 @@
             label_addFood_Description.TabIndex = 9;
             label_addFood_Description.Text = "תיאור";
             // 
-            // textBox_addFood_descriptions
+            // textBox_addFood_description
             // 
             textBox_addFood_description.Location = new Point(51, 269);
-            textBox_addFood_description.Name = "textBox_addFood_descriptions";
+            textBox_addFood_description.Name = "textBox_addFood_description";
             textBox_addFood_description.Size = new Size(257, 34);
             textBox_addFood_description.TabIndex = 8;
             // 
@@ -281,28 +276,75 @@
             button_addFood.UseVisualStyleBackColor = true;
             button_addFood.Click += button_addFood_Click;
             // 
-            // label_addFood_price
+            // label_total_orders
             // 
-            label_addFood_price.AutoSize = true;
-            label_addFood_price.Location = new Point(253, 171);
-            label_addFood_price.Name = "label_addFood_price";
-            label_addFood_price.Size = new Size(54, 28);
-            label_addFood_price.TabIndex = 11;
-            label_addFood_price.Text = "מחיר";
+            label_total_orders.AutoSize = true;
+            label_total_orders.Location = new Point(990, 558);
+            label_total_orders.Name = "label_total_orders";
+            label_total_orders.Size = new Size(118, 28);
+            label_total_orders.TabIndex = 4;
+            label_total_orders.Text = "סהכ הזמנות";
             // 
-            // textBox_addFood_price
+            // textBox_total_orders
             // 
-            textBox_addFood_price.Location = new Point(50, 202);
-            textBox_addFood_price.Name = "textBox_addFood_price";
-            textBox_addFood_price.Size = new Size(257, 34);
-            textBox_addFood_price.TabIndex = 10;
+            textBox_total_orders.Location = new Point(846, 589);
+            textBox_total_orders.Name = "textBox_total_orders";
+            textBox_total_orders.ReadOnly = true;
+            textBox_total_orders.Size = new Size(257, 34);
+            textBox_total_orders.TabIndex = 3;
+            // 
+            // label_total_income
+            // 
+            label_total_income.AutoSize = true;
+            label_total_income.Location = new Point(985, 639);
+            label_total_income.Name = "label_total_income";
+            label_total_income.Size = new Size(123, 28);
+            label_total_income.TabIndex = 7;
+            label_total_income.Text = "סהכ הכנסות";
+            // 
+            // textBox_total_income
+            // 
+            textBox_total_income.Location = new Point(846, 670);
+            textBox_total_income.Name = "textBox_total_income";
+            textBox_total_income.ReadOnly = true;
+            textBox_total_income.Size = new Size(257, 34);
+            textBox_total_income.TabIndex = 6;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.DataPropertyName = "CategoryId";
+            dataGridViewTextBoxColumn3.HeaderText = "מזהה";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // getFoodsForCategory
+            // 
+            getFoodsForCategory.HeaderText = "צפייה";
+            getFoodsForCategory.MinimumWidth = 6;
+            getFoodsForCategory.Name = "getFoodsForCategory";
+            getFoodsForCategory.Text = "צפה";
+            getFoodsForCategory.UseColumnTextForButtonValue = true;
+            getFoodsForCategory.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            dataGridViewTextBoxColumn4.HeaderText = "קטגוריה";
+            dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.Width = 150;
             // 
             // OwnerMenu
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1204, 739);
+            ClientSize = new Size(1204, 1055);
+            Controls.Add(label_total_income);
+            Controls.Add(textBox_total_income);
+            Controls.Add(label_total_orders);
             Controls.Add(panel_addFood);
+            Controls.Add(textBox_total_orders);
             Controls.Add(panel1);
             Controls.Add(dataGridView_dishesByCategories);
             Controls.Add(label1);
@@ -310,6 +352,7 @@
             Controls.Add(categories);
             Font = new Font("Segoe UI", 12F);
             Name = "OwnerMenu";
+            RightToLeft = RightToLeft.Yes;
             Text = "OwnerMenu";
             ((System.ComponentModel.ISupportInitialize)categoryDTOBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)categoryDTOBindingSource1).EndInit();
@@ -339,9 +382,6 @@
         private Label label1;
         private BindingSource dishDTOBindingSource;
         private DataGridView dataGridView_dishesByCategories;
-        private DataGridViewButtonColumn getFoodsForCategory;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
@@ -359,5 +399,12 @@
         private ComboBox comboBox_addFood_categories;
         private Label label_addFood_price;
         private TextBox textBox_addFood_price;
+        private Label label_total_orders;
+        private TextBox textBox_total_orders;
+        private Label label_total_income;
+        private TextBox textBox_total_income;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewButtonColumn getFoodsForCategory;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
