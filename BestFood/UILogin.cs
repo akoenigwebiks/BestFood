@@ -1,40 +1,49 @@
-﻿using MaterialSkin.Controls;
+﻿using ReaLTaiizor.Forms;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BestFood
 {
     public partial class UILogin : MaterialForm
     {
-        
+        enum Role
+        {
+            Admin,
+            Waiter,
+            Kitchen
+        }
         public UILogin()
         {
             InitializeComponent();
-            radio_role_client.Checked = true;
+            radio_role_staff.Checked = true;
         }
 
-        private string GetSelectedRole()
+        private string GetRole()
         {
-            string role = "";
-
-            if (radio_role_owner.Checked)
+            if (radio_role_admin.Checked)
             {
-                role = "owner";
+                return Role.Admin.ToString();
             }
-            else if (radio_role_cook.Checked)
+            else if (radio_role_staff.Checked)
             {
-                role = "cook";
+                return Role.Waiter.ToString();
             }
-            else if (radio_role_client.Checked)
+            else
             {
-                role = "client";
+                return Role.Kitchen.ToString();
             }
-
-            return role;
-         
         }
 
-        private void button_submit_login_Click(object sender, EventArgs e)
+        private void materialButton1_Click(object sender, EventArgs e)
         {
-            string role = GetSelectedRole();
+            string role = GetRole();
             string username = textbox_username.Text;
             string password = textbox_password.Text;
 
