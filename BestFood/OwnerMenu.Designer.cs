@@ -62,8 +62,8 @@ namespace BestFood
             label_total_income = new Label();
             textBox_total_income = new TextBox();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            getFoodsForCategory = new DataGridViewButtonColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            getFoodsForCategory = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)categoryDTOBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)categoryDTOBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)categoriesBindingSource).BeginInit();
@@ -80,7 +80,7 @@ namespace BestFood
             categories.AutoSize = true;
             categories.Location = new Point(1103, 27);
             categories.Name = "categories";
-            categories.Size = new Size(89, 28);
+            categories.Size = new Size(72, 21);
             categories.TabIndex = 0;
             categories.Text = "קטגוריות";
             // 
@@ -88,7 +88,7 @@ namespace BestFood
             // 
             datagridView_categories.AutoGenerateColumns = false;
             datagridView_categories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            datagridView_categories.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, getFoodsForCategory, dataGridViewTextBoxColumn4 });
+            datagridView_categories.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, getFoodsForCategory });
             datagridView_categories.DataSource = categoryDTOBindingSource2;
             datagridView_categories.Location = new Point(738, 58);
             datagridView_categories.Name = "datagridView_categories";
@@ -106,7 +106,7 @@ namespace BestFood
             label1.AutoSize = true;
             label1.Location = new Point(1113, 289);
             label1.Name = "label1";
-            label1.Size = new Size(79, 28);
+            label1.Size = new Size(64, 21);
             label1.TabIndex = 2;
             label1.Text = "מאכלים";
             // 
@@ -165,7 +165,7 @@ namespace BestFood
             label2.AutoSize = true;
             label2.Location = new Point(224, 16);
             label2.Name = "label2";
-            label2.Size = new Size(83, 28);
+            label2.Size = new Size(67, 21);
             label2.TabIndex = 2;
             label2.Text = "קטגוריה";
             // 
@@ -173,7 +173,7 @@ namespace BestFood
             // 
             textBox_addCategory.Location = new Point(50, 47);
             textBox_addCategory.Name = "textBox_addCategory";
-            textBox_addCategory.Size = new Size(257, 34);
+            textBox_addCategory.Size = new Size(257, 29);
             textBox_addCategory.TabIndex = 1;
             // 
             // button_categoryAdd
@@ -207,7 +207,7 @@ namespace BestFood
             label_addFood_price.AutoSize = true;
             label_addFood_price.Location = new Point(253, 171);
             label_addFood_price.Name = "label_addFood_price";
-            label_addFood_price.Size = new Size(54, 28);
+            label_addFood_price.Size = new Size(45, 21);
             label_addFood_price.TabIndex = 11;
             label_addFood_price.Text = "מחיר";
             // 
@@ -215,7 +215,7 @@ namespace BestFood
             // 
             textBox_addFood_price.Location = new Point(50, 202);
             textBox_addFood_price.Name = "textBox_addFood_price";
-            textBox_addFood_price.Size = new Size(257, 34);
+            textBox_addFood_price.Size = new Size(257, 29);
             textBox_addFood_price.TabIndex = 10;
             // 
             // label_addFood_Description
@@ -223,7 +223,7 @@ namespace BestFood
             label_addFood_Description.AutoSize = true;
             label_addFood_Description.Location = new Point(248, 238);
             label_addFood_Description.Name = "label_addFood_Description";
-            label_addFood_Description.Size = new Size(61, 28);
+            label_addFood_Description.Size = new Size(49, 21);
             label_addFood_Description.TabIndex = 9;
             label_addFood_Description.Text = "תיאור";
             // 
@@ -231,7 +231,7 @@ namespace BestFood
             // 
             textBox_addFood_description.Location = new Point(51, 269);
             textBox_addFood_description.Name = "textBox_addFood_description";
-            textBox_addFood_description.Size = new Size(257, 34);
+            textBox_addFood_description.Size = new Size(257, 29);
             textBox_addFood_description.TabIndex = 8;
             // 
             // label_addFood_Name
@@ -239,7 +239,7 @@ namespace BestFood
             label_addFood_Name.AutoSize = true;
             label_addFood_Name.Location = new Point(248, 97);
             label_addFood_Name.Name = "label_addFood_Name";
-            label_addFood_Name.Size = new Size(60, 28);
+            label_addFood_Name.Size = new Size(49, 21);
             label_addFood_Name.TabIndex = 7;
             label_addFood_Name.Text = "מאכל";
             // 
@@ -248,7 +248,7 @@ namespace BestFood
             label_addFood_Category.AutoSize = true;
             label_addFood_Category.Location = new Point(224, 21);
             label_addFood_Category.Name = "label_addFood_Category";
-            label_addFood_Category.Size = new Size(83, 28);
+            label_addFood_Category.Size = new Size(67, 21);
             label_addFood_Category.TabIndex = 3;
             label_addFood_Category.Text = "קטגוריה";
             // 
@@ -258,14 +258,14 @@ namespace BestFood
             comboBox_addFood_categories.FormattingEnabled = true;
             comboBox_addFood_categories.Location = new Point(50, 52);
             comboBox_addFood_categories.Name = "comboBox_addFood_categories";
-            comboBox_addFood_categories.Size = new Size(257, 36);
+            comboBox_addFood_categories.Size = new Size(257, 29);
             comboBox_addFood_categories.TabIndex = 6;
             // 
             // textBox_addFood_name
             // 
             textBox_addFood_name.Location = new Point(51, 128);
             textBox_addFood_name.Name = "textBox_addFood_name";
-            textBox_addFood_name.Size = new Size(257, 34);
+            textBox_addFood_name.Size = new Size(257, 29);
             textBox_addFood_name.TabIndex = 1;
             // 
             // button_addFood
@@ -283,7 +283,7 @@ namespace BestFood
             label_total_orders.AutoSize = true;
             label_total_orders.Location = new Point(990, 558);
             label_total_orders.Name = "label_total_orders";
-            label_total_orders.Size = new Size(118, 28);
+            label_total_orders.Size = new Size(94, 21);
             label_total_orders.TabIndex = 4;
             label_total_orders.Text = "סהכ הזמנות";
             // 
@@ -292,7 +292,7 @@ namespace BestFood
             textBox_total_orders.Location = new Point(846, 589);
             textBox_total_orders.Name = "textBox_total_orders";
             textBox_total_orders.ReadOnly = true;
-            textBox_total_orders.Size = new Size(257, 34);
+            textBox_total_orders.Size = new Size(257, 29);
             textBox_total_orders.TabIndex = 3;
             // 
             // label_total_income
@@ -300,7 +300,7 @@ namespace BestFood
             label_total_income.AutoSize = true;
             label_total_income.Location = new Point(985, 639);
             label_total_income.Name = "label_total_income";
-            label_total_income.Size = new Size(123, 28);
+            label_total_income.Size = new Size(98, 21);
             label_total_income.TabIndex = 7;
             label_total_income.Text = "סהכ הכנסות";
             // 
@@ -309,7 +309,7 @@ namespace BestFood
             textBox_total_income.Location = new Point(846, 670);
             textBox_total_income.Name = "textBox_total_income";
             textBox_total_income.ReadOnly = true;
-            textBox_total_income.Size = new Size(257, 34);
+            textBox_total_income.Size = new Size(257, 29);
             textBox_total_income.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn3
@@ -320,6 +320,14 @@ namespace BestFood
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             dataGridViewTextBoxColumn3.Width = 125;
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            dataGridViewTextBoxColumn4.HeaderText = "קטגוריה";
+            dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.Width = 150;
+            // 
             // getFoodsForCategory
             // 
             getFoodsForCategory.HeaderText = "צפייה";
@@ -329,17 +337,9 @@ namespace BestFood
             getFoodsForCategory.UseColumnTextForButtonValue = true;
             getFoodsForCategory.Width = 125;
             // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            dataGridViewTextBoxColumn4.HeaderText = "קטגוריה";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.Width = 150;
-            // 
             // OwnerMenu
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1204, 1055);
             Controls.Add(label_total_income);
@@ -406,7 +406,7 @@ namespace BestFood
         private Label label_total_income;
         private TextBox textBox_total_income;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewButtonColumn getFoodsForCategory;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewButtonColumn getFoodsForCategory;
     }
 }

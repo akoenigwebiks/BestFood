@@ -11,12 +11,12 @@ namespace BestFood
         public OwnerMenu()
         {
             InitializeComponent();
-            SeedCategories();
+            FetchCategories();
             DBGetTotalIncome();
             DBGetTotalOrdersCount();
         }
 
-        private void SeedCategories()
+        private void FetchCategories()
         {
             List<CategoryDTO> categoryDTOs = categoryService.GetCategories();
             datagridView_categories.DataSource = categoryDTOs;
@@ -50,7 +50,7 @@ namespace BestFood
             }
             Microsoft.VisualBasic.Interaction.MsgBox($"{categoryToAdd} Added");
             DBInsertCategory(categoryToAdd);
-            this.SeedCategories();
+            this.FetchCategories();
             textBox_addCategory.Clear();
 
         }

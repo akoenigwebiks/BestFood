@@ -7,7 +7,13 @@ namespace BestFood.DAL
 {
     internal static class AppSqlHandler
     {
-        private static readonly string connectionString = "Data Source=AEK;Initial Catalog=bestfood;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+        private static string? connectionString;
+        //private static string connectionString = "Data Source=AEK;Initial Catalog=bestfood;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+        public static void Initialize(string connectionStringConfig)
+        {
+            connectionString = connectionStringConfig;
+        }
 
         // Method to connect to the database
         private static SqlConnection GetOpenConnection()

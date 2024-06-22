@@ -43,8 +43,8 @@
                 CreateDatabase();
 
                 // Ensure the tables exist
-                CreateTable(tableNames.dishesTableName, GetDishesTableCreationSql());
                 CreateTable(tableNames.categoriesTableName, GetCategoriesTableCreationSql());
+                CreateTable(tableNames.dishesTableName, GetDishesTableCreationSql());
                 CreateTable(tableNames.ordersTableName, GetOrdersTableCreationSql());
                 CreateTable(tableNames.orderDetailsTableName, GetOrderDetailsTableCreationSql());
 
