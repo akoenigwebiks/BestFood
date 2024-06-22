@@ -1,6 +1,7 @@
-﻿using System.Data;
+﻿using BestFood.Models;
+using System.Data;
 
-namespace BestFood
+namespace BestFood.DAL
 {
     internal class CategoryService
     {
@@ -28,7 +29,7 @@ namespace BestFood
         public bool AddOne(string categoryToAdd)
         {
             string query = $"INSERT INTO categories (Name) VALUES ('{categoryToAdd.Replace("'", "''")}');";
-            return AppSqlHandler.InsertRow(query);
+            return AppSqlHandler.ExecuteNonQuery(query);
         }
     }
 }

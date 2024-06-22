@@ -1,4 +1,6 @@
-﻿namespace BestFood
+﻿using BestFood.Models;
+
+namespace BestFood
 {
     partial class OwnerMenu
     {

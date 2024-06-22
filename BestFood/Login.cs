@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace BestFood
 {
-    public partial class CustomerMenu : Form
+    public partial class Login : Form
     {
-        public CustomerMenu()
+        public Login()
         {
             InitializeComponent();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

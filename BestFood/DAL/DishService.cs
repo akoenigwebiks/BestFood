@@ -1,6 +1,7 @@
-﻿using System.Data;
+﻿using BestFood.Models;
+using System.Data;
 
-namespace BestFood
+namespace BestFood.DAL
 {
     internal class DishService
     {
@@ -23,13 +24,14 @@ namespace BestFood
         public List<DishDTO> GetAll()
         {
             string query = "SELECT * FROM dishes;";
-            return this.ToDTOList(AppSqlHandler.QueryIntoDataTable(query)); 
+            return ToDTOList(AppSqlHandler.QueryIntoDataTable(query));
         }
 
         // Get all dishes in a category
-        public List<DishDTO> GetByCategoryID(int id) {
+        public List<DishDTO> GetByCategoryID(int id)
+        {
             string query = $"SELECT * FROM dishes WHERE CategoryID = {id};";
-            return this.ToDTOList(AppSqlHandler.QueryIntoDataTable(query));
+            return ToDTOList(AppSqlHandler.QueryIntoDataTable(query));
         }
 
         public void AddOne(string foodname, string foodPrice, string foodDescription, string categoryId)
@@ -39,7 +41,7 @@ namespace BestFood
             string query = $"INSERT INTO dishes (Name, Price, Description, CategoryID) VALUES ('{foodname.Replace("'", "''")}', {foodPrice}, '{foodDescription.Replace("'", "''")}', {categoryId});";
 
             // Call the InsertRow method from AppSqlHandler to execute the query
-            bool success = AppSqlHandler.InsertRow(query);
+            bool success = AppSqlHandler.ExecuteNonQuery(query);
 
             if (success)
             {

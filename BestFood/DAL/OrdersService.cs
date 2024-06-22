@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BestFood.Models;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BestFood
+namespace BestFood.DAL
 {
     internal class OrdersService
     {
@@ -26,13 +22,13 @@ namespace BestFood
         public List<OrderDTO> GetOrdersByDate(DateTime date)
         {
             string query = $"SELECT * FROM orders WHERE OrderDate = '{date.ToString("yyyy-MM-dd")}';";
-            return this.ToDTOList(AppSqlHandler.QueryIntoDataTable(query));
+            return ToDTOList(AppSqlHandler.QueryIntoDataTable(query));
         }
 
         public List<OrderDTO> GetOrdersByStatus(string status)
         {
             string query = $"SELECT * FROM orders WHERE Status = '{status}';";
-            return this.ToDTOList(AppSqlHandler.QueryIntoDataTable(query));
+            return ToDTOList(AppSqlHandler.QueryIntoDataTable(query));
         }
 
         // get totalamount of orders
@@ -41,7 +37,7 @@ namespace BestFood
             // Get total amount of orders from the database
             return AppSqlHandler.QueryIntoDataTable("SELECT SUM(TotalAmount) FROM orders;")
                 .AsEnumerable()
-                .Select(row => row.Field<decimal>(0))
+                .Select(row => row.Field<decimal?>(0) ?? 0m)
                 .FirstOrDefault();
         }
 

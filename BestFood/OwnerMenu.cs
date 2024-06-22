@@ -1,3 +1,6 @@
+using BestFood.DAL;
+using BestFood.Models;
+
 namespace BestFood
 {
     public partial class OwnerMenu : Form
