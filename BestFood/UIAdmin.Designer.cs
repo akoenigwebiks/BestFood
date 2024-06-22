@@ -2,7 +2,7 @@
 
 namespace BestFood
 {
-    partial class OwnerMenu
+    partial class UIAdmin
     {
         /// <summary>
         ///  Required designer variable.

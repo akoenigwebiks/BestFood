@@ -8,7 +8,7 @@ namespace BestFood
 {
     internal static class Program
     {
-        private static IConfiguration Configuration { get; set; }
+        private static IConfiguration? Configuration { get; set; }
 
         /// <summary>
         ///  The main entry point for the application.
@@ -21,16 +21,17 @@ namespace BestFood
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("secrets.json", optional: true, reloadOnChange: true)
                 .Build();
-            
+
             // Pass the configuration to the DAL
-            AppSqlHandler.Initialize(Configuration.GetConnectionString("BestFoodDatabase"));
+            AppSqlHandler.Initialize(Configuration.GetConnectionString("BestFoodDatabase")!);
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             new Seed().EnsureExists();
             //new Seed(true,true).EnsureExists();
-            Application.Run(new OwnerMenu());
+            Application.Run(new UILogin());
+            //Application.Run(new UIAdmin());
 
         }
     }

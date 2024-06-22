@@ -3,12 +3,12 @@ using BestFood.Models;
 
 namespace BestFood
 {
-    public partial class OwnerMenu : Form
+    public partial class UIAdmin : Form
     {
         private DishService dishService = new DishService();
         private CategoryService categoryService = new CategoryService();
         private OrdersService ordersService = new OrdersService();
-        public OwnerMenu()
+        public UIAdmin()
         {
             InitializeComponent();
             FetchCategories();
